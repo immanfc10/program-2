@@ -2,12 +2,14 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('data.csv')
+data = pd.read_csv('dev.csv')
 data.head()
-x = data['']
-y = data['Salary']
+x = data['dev.x.txt']
+y = data['dev.y.txt']
 plt.scatter(x, y)
-pl.title()
+plt.title('Scatter Plot')
+plt.xlabel('dev.x.txt')
+plt.ylabel('dev.y.txt')
 plt.show()
 
 y = mx + b
@@ -26,5 +28,9 @@ for i in range(epochs):
     db = (-2/n) * sum(y - y_hat)
     m = m - Learning_rate * dm
     b = b - Learning_rate * db
+    if i % 100 == 0:
+        print(f'Epoch {i}: MSE = {mse}, m = {m}, b = {b}')
+        
+
     
 
